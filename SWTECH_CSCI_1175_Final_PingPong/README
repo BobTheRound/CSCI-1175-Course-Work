@@ -4,3 +4,66 @@ For now the project is simply hitting a ball at the wall (Server in this case) a
 the server will send you a ball coordinate, the client (user side) will then place an invisible button on the grid of buttons.
 the client will give you two buttons as "Hint!"s that are touching the ball but not on the ball.
 Using deductive reasoning you must hit the ball back to the wall! Future iterations will include multiplayer functionality as well as UI beautification!
+
+## How to Run
+You will need an IDE (I coded this in Eclipse). Start the "Main" class first followed by "ClientOne". The debugTestBed may be ignored.
+
+## Code Example
+I went down a long series of rabbit holes figuring out the logic behind how the hint buttons would be placed. It occured to me that the Hint! buttons could only be placed in one of eight spaces (provided the ball did not touch the edge)
+Therefore a switch case was implemented as follows: 
+```
+Insert Code Here
+```
+private void getHintButton(GridPane pane, int rand1, int rand2, int picker, Button hint) {
+		int newCol = 0;
+		int newRow = 0;
+			switch (picker){
+			case 8 ://top left of button
+				System.out.println("case 8");
+				newCol = rand1 - 1;
+				newRow = rand2 - 1;
+				break;
+			case 7 ://top of button
+				System.out.println("case 7");
+				newCol = rand1;
+				newRow = rand2 - 1;
+				break;
+			case 6 ://top right of button
+				System.out.println("case 6");
+				newCol = rand1 + 1;
+				newRow = rand2 - 1;
+				break;
+			case 5 ://middle left of button
+				System.out.println("case 5");
+				newCol = rand1 - 1;
+				newRow = rand2;
+				break;
+			case 4 ://middle right of button
+				System.out.println("case 4");
+				newCol = rand1 + 1;
+				newRow = rand2;
+				break;
+			case 3 ://lower left of button
+				System.out.println("case 3");
+				newCol = rand1 - 1;
+				newRow = rand2 + 1;
+				break;
+			case 2 ://lower middle of button
+				System.out.println("case 2");
+				newCol = rand1;
+				newRow = rand2 + 1;
+				break;
+			default://lower right of button
+				System.out.println("case default");
+				newCol = rand1 + 1;
+				newRow = rand2 + 1;
+				break;
+				
+			}
+			pane.add(hint, newCol, newRow);
+
+	}
+
+Special thanks to:
+My Instructor, Jason Adams, for advice on code and encouragmenet to push forward
+Issac Gable, my best friend and brother, for snagging me by the ears and pulling me out of some numerous rabbit holes.
