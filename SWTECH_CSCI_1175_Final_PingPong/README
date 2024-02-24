@@ -1,0 +1,6 @@
+Greetings and salutations!
+This project, which I have dubbed "Athleticly Disinclined Ping Pong", was, as soon as I discovered how sockets and I/O streams worked, conjured up!
+For now the project is simply hitting a ball at the wall (Server in this case) and the server hitting the ball back.
+the server will send you a ball coordinate, the client (user side) will then place an invisible button on the grid of buttons.
+the client will give you two buttons as "Hint!"s that are touching the ball but not on the ball.
+Using deductive reasoning you must hit the ball back to the wall! Future iterations will include multiplayer functionality as well as UI beautification!
